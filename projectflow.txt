@@ -1,4 +1,13 @@
 1 . creat a git repo and clone it in local 
 2. create code.py and add code to it (it will save  a new csv file to a new "data" folder )
 3. Do a git add commit -m  and push before initializing the dvc
-4. 
+pip install dvc
+4. Now we do "dvc init" (creates .dvcignore , .dvc )
+5. Now do "mkdir S3" (creates a new S3 directory ) where dvc will actually save the data , we need to tell dvc to store the data at this location . so ye jo dvc kae liyae jo remote origin hai ye ek S3 bhi ho sakta hai 
+6. Now we do "dvc remote add -d myremote(any name we want) S3(url)" to tell dvc our remote origin  and its name to refer
+7.Next "dvc add data/"  # nothing after / means what ever files or folders inside data will come , you need to track that . 
+also if we want to track a specific file inside the data then we can add it after /
+Now it will ask to do :("git rm -r --cached 'data' i.e we stopped any tracking in 'data' and now we will commit this change : "git commit -m "stop tracking data") because its like we have already given it in counter 1 i.e through git 
+because initailly we were tracking "data" folder from git so now we remove it for DVC to handle that from now onwards what ever data you see in this folder now you dvc will be completely responsible for its versioning . 
+
+data.dvc is what contains the id corresponding to the code versions. i.e  the md5 and in .dvc we can see all the records and changes 
