@@ -11,3 +11,10 @@ Now it will ask to do :("git rm -r --cached 'data' i.e we stopped any tracking i
 because initailly we were tracking "data" folder from git so now we remove it for DVC to handle that from now onwards what ever data you see in this folder now you dvc will be completely responsible for its versioning . 
 
 data.dvc is what contains the id corresponding to the code versions. i.e  the md5 and in .dvc we can see all the records and changes 
+
+now we will commit all the changes so that git also remains up to date an dvc also remains up to date . 
+
+8. Again we do "dvc add data/" (creates data.dvc) then "git add .gitignore data.dvc"
+9.Now - "dvc commit" and then "dvc push" 
+2 files pushed means : ek hi data file kae liyae do file push karta hai , ek corresponding data rehta hai jaha par md file hash rehta hai . ek md5 token id  : which changes every time when data  changes . dusra file wo actual file khud hai . 
+10. Do a git add-commit-push to mark this stage as first version of data
