@@ -22,4 +22,13 @@ now we will commit all the changes so that git also remains up to date an dvc al
 12. Again - - "dvc commit " -> this will give new id  and then "dvc push" will push and will add two more files , one for md5 and other for file info  . 
 Now this two newly created file(3b , 32) containing our file md5 id and data changes is our new version of data for this version of code commited . i.e for second version we have 3b and 32  uinque id . and these will be present at aws and git won't be tracking that . 
 13 . Then git add-commit-push(we are saving v2 of our data at this point)
+yaha git push karne par jo bhi dvc id hai data.dvc mae wo bhi push ho jaa raha automatically , and although we are push S3 files also but in real the AWS S3 will not be tracked .  
 14. check dvc/git status , everything should be up to date
+15. Now repeat step 10 - 12 for V3 of data. 
+
+
+now we are rolling back the version and checking to see if we get the desired data version or not ?
+
+git log --oneline
+git checkout <SHA_id> - git checkout master
+dvc pull
