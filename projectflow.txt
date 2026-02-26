@@ -16,5 +16,8 @@ now we will commit all the changes so that git also remains up to date an dvc al
 
 8. Again we do "dvc add data/" (creates data.dvc) then "git add .gitignore data.dvc"
 9.Now - "dvc commit" and then "dvc push" 
-2 files pushed means : ek hi data file kae liyae do file push karta hai , ek corresponding data rehta hai jaha par md file hash rehta hai . ek md5 token id  : which changes every time when data  changes . dusra file wo actual file khud hai . 
+2 files pushed means (44 , ad ): ek hi data file kae liyae do file push karta hai , ek corresponding data rehta hai jaha par md file hash rehta hai . ek md5 token id  : which changes every time when data  changes . dusra file wo actual file khud hai . 
 10. Do a git add-commit-push to mark this stage as first version of data
+11. Now make changes to mycode.py to append a new row in data , check changes via "dvc status" 
+12. Again - - "dvc commit " -> this will give new id  and then "dvc push" will push and will add two more files , one for md5 and other for file info  . 
+Now this two newly created file(3b , 32) containing our file md5 id and data changes is our new version of data for this version of code commited . i.e for second version we have 3b and 32  uinque id . and these will be present at aws and git won't be tracking that . 

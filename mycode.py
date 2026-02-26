@@ -10,9 +10,17 @@ data = {'Name': ['vishank' , 'rahul' , 'banti'] ,
 
 df = pd.DataFrame(data)
 
+
+# adding a new row to df for V2
+new_row_loc = {'Name' : 'GF1' , 'Age' : 20 , 'city' : 'city1'}
+df.loc[len(df.index)]= new_row_loc
+
+
 # Ensure the "data" directory exists at root level
 data_dir = 'data'
 os.makedirs(data_dir , exist_ok= True) # True means if their is already a data that is with the same name then use that only , do not overwrite or replace it 
+
+
 
 # define the file path 
 file_path = os.path.join(data_dir , 'sample_data.csv')
