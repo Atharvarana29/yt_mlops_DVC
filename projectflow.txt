@@ -29,6 +29,14 @@ yaha git push karne par jo bhi dvc id hai data.dvc mae wo bhi push ho jaa raha a
 
 now we are rolling back the version and checking to see if we get the desired data version or not ?
 
+
+most useful commands:
+
 git log --oneline
 git checkout <SHA_id> - git checkout master
+dvc status
 dvc pull
+after this both should be up to date 
+
+
+data.dvc ko humlog  git sae track karate rahege.
